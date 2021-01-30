@@ -28,9 +28,6 @@ public class MenuDto {
 
   private Set<DishDto> dishes;
 
-  public MenuDto() {
-  }
-
   public MenuDto(Long id, String name, Set<DishDto> dishes) {
     this.setId(id);
     this.setName(name);
@@ -72,9 +69,6 @@ public class MenuDto {
   }
 
   public static MenuDto fromModel(Menu menu) {
-    return new MenuDto()
-      .setId(menu.getId())
-      .setName(menu.getName())
-      .setDishes(DishDto.fromModelSet(menu.getDishes()));
+    return new MenuDto(menu.getId(), menu.getName(), DishDto.fromModelSet(menu.getDishes()));
   }
 }
