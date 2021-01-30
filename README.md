@@ -17,3 +17,8 @@ $ curl -XGET localhost:8080/menus
 # Créer un nouveau menu "Menu de Noel" avec un plat "Céréales sur lait"
 $ curl -H "Content-Type: application/json"  -d '{"name": "Menu de Noel", "dishes": [{"name": "Céréales sur lait"}]}' http://localhost:8080/menus
 ```
+
+## Nouvelles fonctionnalités
+
+Mise en place d'une intégration continus.
+Mise en place de Maven
