@@ -38,9 +38,6 @@ public class Dish {
   @EqualsAndHashCode.Exclude
   private Set<Menu> menus;
 
-  public Dish(){
-  }
-
   public Dish(Long id, String name){
     this.id = id;
     this.name = name;
