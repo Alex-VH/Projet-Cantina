@@ -38,9 +38,41 @@ public class Dish {
   @EqualsAndHashCode.Exclude
   private Set<Menu> menus;
 
+  public Dish(){
+  }
+
+  public Dish(Long id, String name){
+    this.id = id;
+    this.name = name;
+  }
+
   public Dish(Long id, String name, Set<Menu> menus) {
     this.id = id;
     this.name = name;
+    this.menus = menus;
+  }
+
+  public Long getId() {
+    return id;
+  }
+
+  public void setId(Long id) {
+    this.id = id;
+  }
+
+  public String getName() {
+    return name;
+  }
+
+  public void setName(String name) {
+    this.name = name;
+  }
+
+  public Set<Menu> getMenus() {
+    return menus;
+  }
+
+  public void setMenus(Set<Menu> menus) {
     this.menus = menus;
   }
 
@@ -55,8 +87,6 @@ public class Dish {
   }
 
   public static Dish fromDto(DishDto dto) {
-    return new Dish()
-      .setId(dto.getId())
-      .setName(dto.getName());
+    return new Dish(dto.getId(),dto.getName());
   }
 }
