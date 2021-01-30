@@ -1,7 +1,7 @@
 name: CI Cantina branche
 on: [push, pull_request]
-    branches-ignore:
-      - main
+  branches-ignore:
+    - main
 jobs:
   push_pr_branch:
     runs-on: ubuntu-18.04
