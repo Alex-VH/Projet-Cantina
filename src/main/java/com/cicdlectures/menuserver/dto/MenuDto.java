@@ -29,9 +29,33 @@ public class MenuDto {
   private Set<DishDto> dishes;
 
   public MenuDto(Long id, String name, Set<DishDto> dishes) {
-    this.id = id;
-    this.name = name;
+    this.setId(id);
+    this.setName(name);
+    this.setDishes(dishes);
+  }
+
+  public Set<DishDto> getDishes() {
+    return dishes;
+  }
+
+  public void setDishes(Set<DishDto> dishes) {
     this.dishes = dishes;
+  }
+
+  public String getName() {
+    return name;
+  }
+
+  public void setName(String name) {
+    this.name = name;
+  }
+
+  public Long getId() {
+    return id;
+  }
+
+  public void setId(Long id) {
+    this.id = id;
   }
 
   public static List<MenuDto> fromModelIterable(Iterable<Menu> models) {
@@ -45,9 +69,6 @@ public class MenuDto {
   }
 
   public static MenuDto fromModel(Menu menu) {
-    return new MenuDto()
-      .setId(menu.getId())
-      .setName(menu.getName())
-      .setDishes(DishDto.fromModelSet(menu.getDishes()));
+    return new MenuDto(menu.getId(), menu.getName(), DishDto.fromModelSet(menu.getDishes()));
   }
 }
