@@ -38,16 +38,42 @@ public class Menu {
   @EqualsAndHashCode.Exclude
   private Set<Dish> dishes;
 
+  public Menu(Long id, String name){
+    this.id = id;
+    this.name = name;
+  }
+
   public Menu(Long id, String name, Set<Dish> dishes) {
     this.id = id;
     this.name = name;
     this.dishes = dishes;
   }
 
+  public Long getId() {
+    return id;
+  }
+
+  public void setId(Long id) {
+    this.id = id;
+  }
+
+  public String getName() {
+    return name;
+  }
+
+  public void setName(String name) {
+    this.name = name;
+  }
+
+  public Set<Dish> getDishes() {
+    return dishes;
+  }
+
+  public void setDishes(Set<Dish> dishes) {
+    this.dishes = dishes;
+  }
+
   public static Menu fromDto(MenuDto menuDto) {
-    return new Menu()
-      .setId(menuDto.getId())
-      .setName(menuDto.getName())
-      .setDishes(Dish.fromDtoSet(menuDto.getDishes()));
+    return new Menu(menuDto.getId(), menuDto.getName(), Dish.fromDtoSet(menuDto.getDishes()));
   }
 }
