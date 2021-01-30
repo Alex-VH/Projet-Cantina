@@ -2,9 +2,11 @@
 
 Cette application est une API REST(-ish) pour gérer les menus de la Cantina.
 
-Je vous dirais bien comment la lancer, mais le précédent employé est parti sans laisser de documentation.
-
-Il disait : "il suffit de lancer le script run.sh".
+Pour lancer l'application, executer les commandes suivantes :
+```shell
+$ mvn verify
+$ java -jar target/projet-cantina-2.0.2.jar
+```
 
 ## Utilisation
 
