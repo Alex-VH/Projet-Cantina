@@ -1,8 +1,8 @@
 name: Create release
 on:
   push:
-    #tags:
-    #  - 'v1.1'
+    tags:
+      - 'v*'
 
 jobs:
   build:
@@ -22,18 +22,18 @@ jobs:
           restore-keys: ${{ runner.os }}-m2
       - name: Build with maven
         run: mvn --batch-mode --update-snapshots verify
-#      - name: Create Release
-#          id: create_release
-#          uses: actions/create-release@v1
-#          env:
-#            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-#          with:
-#            tag_name: ${{ github.ref }}
-#            release_name: Release ${{ github.ref }}
-#            body: |
-#              Changes in this Release
-#            draft: false
-#            prerelease: false
+      - name: Create Release
+          id: create_release
+          uses: actions/create-release@v1
+          env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          with:
+            tag_name: ${{ github.ref }}
+            release_name: Release ${{ github.ref }}
+            body: |
+              Changes in this Release
+            draft: false
+            prerelease: false
 
 #      - name: Upload Release Asset
 #          id: upload-release-asset
@@ -45,6 +45,3 @@ jobs:
 #            asset_path: ./target/projet-cantina${{github.ref}}.jar
 #            asset_name: projet-cantina${{github.ref}}.jar
 #            asset_content_type: application/java-archive
-
-
-
