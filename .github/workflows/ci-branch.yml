@@ -1,6 +1,6 @@
 name: CI Cantina branche
 on:
-  pull_request:
+  push:
     branches-ignore:
       - main
   pull_request:
