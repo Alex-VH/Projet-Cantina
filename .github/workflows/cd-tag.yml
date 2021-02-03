@@ -1,6 +1,8 @@
 name: Create release
 on:
   push:
+#    branches:
+#      - 'main'
     tags:
       - 'v*'
 
@@ -43,6 +45,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./target/projet-cantina-${{github.ref.tag_name}}.jar
-          asset_name: projet-cantina-${{github.ref.tag_name}}.jar
+          asset_path: ./target/projet-cantina-${{ GITHUB_REF##*/ }}.jar
+          asset_name: projet-cantina-${{ GITHUB_REF##*/ }}.jar
           asset_content_type: application/java-archive
