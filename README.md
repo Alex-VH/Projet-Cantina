@@ -2,9 +2,11 @@
 
 Cette application est une API REST(-ish) pour gérer les menus de la Cantina.
 
-Je vous dirais bien comment la lancer, mais le précédent employé est parti sans laisser de documentation.
-
-Il disait : "il suffit de lancer le script run.sh".
+Pour lancer l'application, executer les commandes suivantes :
+```shell
+$ mvn verify
+$ java -jar target/projet-cantina-2.0.2.jar
+```
 
 ## Utilisation
 
@@ -17,3 +19,8 @@ $ curl -XGET localhost:8080/menus
 # Créer un nouveau menu "Menu de Noel" avec un plat "Céréales sur lait"
 $ curl -H "Content-Type: application/json"  -d '{"name": "Menu de Noel", "dishes": [{"name": "Céréales sur lait"}]}' http://localhost:8080/menus
 ```
+
+## Nouvelles fonctionnalités
+
+Mise en place d'une intégration continus.
+Mise en place de Maven
