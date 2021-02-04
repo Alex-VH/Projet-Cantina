@@ -12,7 +12,7 @@
 
   <groupId>com.ensg.app</groupId>
   <artifactId>projet-cantina</artifactId>
-  <version>v2.0.3</version>
+  <version>v2.0.4</version>
 
   <name>Projet Cantina</name>
   <description>Projet de Ci-Cd pour l'ENSG - Master 2 TSI</description>
