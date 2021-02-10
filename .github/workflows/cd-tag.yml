@@ -23,6 +23,8 @@ jobs:
           restore-keys: ${{ runner.os }}-m2
       - name: Build with maven
         run: mvn --batch-mode --update-snapshots verify
+      - name: Repackage
+        run: mvn package spring-boot:repackage
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
